@@ -1,0 +1,726 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="SwasthPath - Rural Health Guidance Assistant">
+
+    <title>SwasthPath | Rural Health Guidance Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <button class="logo" id="homeLogo" type="button">
+                <span class="logo-heart">♥</span>
+                <span class="logo-text">SwasthPath</span>
+            </button>
+
+            <nav class="nav-menu">
+
+                <button type="button" id="navHome">
+                    Home
+                </button>
+
+                <button type="button" id="navHealthCheck">
+                    Health Check
+                </button>
+
+                <button type="button" id="navAbout">
+                    About
+                </button>
+
+            </nav>
+
+
+            <div class="language-selector">
+
+                <select id="languageSelect" aria-label="Select language">
+
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="mr">मराठी</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ===================================================== -->
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO SECTION
+        ===================================================== -->
+
+        <section id="heroSection" class="hero-section">
+
+            <div class="hero-container">
+
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span>●</span> Rural Healthcare Support
+                    </div>
+
+
+                    <h1>
+                        Your Health.
+                        <span>Clear Next Step.</span>
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        SwasthPath is a simple rural health guidance assistant that helps users understand what they should do next when they have a basic health concern.
+
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <button id="startHealthBtn" class="btn btn-primary" type="button">
+
+                            <span>🩺</span>
+                            Start Health Check
+
+                        </button>
+
+
+                        <button id="learnMoreBtn" class="btn btn-secondary" type="button">
+
+                            Learn More
+                            <span>→</span>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="hero-features">
+
+                        <div class="hero-feature">
+                            <span>✓</span> Simple Questions
+                        </div>
+
+                        <div class="hero-feature">
+                            <span>✓</span> Emergency Awareness
+                        </div>
+
+                        <div class="hero-feature">
+                            <span>✓</span> Local Language
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="hero-visual">
+
+                    <div class="health-card">
+
+                        <div class="health-card-top">
+
+                            <div class="health-icon">
+                                ♥
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Health Guidance
+                                </h3>
+
+                                <p>
+                                    Find your next step
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="care-list">
+
+
+                            <div class="care-option">
+
+                                <div class="care-icon home-icon">
+                                    🏠
+                                </div>
+
+                                <div class="care-info">
+
+                                    <strong>
+                                        Home Care
+                                    </strong>
+
+                                    <span>
+                                        Monitor your condition
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="care-option">
+
+                                <div class="care-icon clinic-icon">
+                                    🏥
+                                </div>
+
+                                <div class="care-info">
+
+                                    <strong>
+                                        Local Clinic
+                                    </strong>
+
+                                    <span>
+                                        Consult a healthcare provider
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="care-option emergency-option">
+
+                                <div class="care-icon emergency-icon">
+                                    🚨
+                                </div>
+
+                                <div class="care-info">
+
+                                    <strong>
+                                        Urgent Care
+                                    </strong>
+
+                                    <span>
+                                        Seek medical attention
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-disclaimer">
+
+                            General guidance • Not a diagnosis
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             HEALTH CHECK SECTION
+        ===================================================== -->
+
+        <section id="healthChecker" class="health-checker" style="display: none;">
+
+            <div class="checker-container">
+
+
+                <div class="checker-header">
+
+                    <button id="backToHomeBtn" class="back-button" type="button">
+
+                        ← Back to Home
+
+                    </button>
+
+
+                    <div class="checker-title">
+
+                        <span class="section-tag">
+                            HEALTH GUIDANCE
+                        </span>
+
+                        <h2>
+                            Let's understand your concern
+                        </h2>
+
+                        <p>
+                            Answer a few simple questions. Your answers will help us provide a general next-step guidance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div id="checkerCard" class="checker-card">
+
+
+                    <div id="progressArea" class="progress-area">
+
+                        <div class="progress-top">
+
+                            <span id="progressText">
+                                Getting started
+                            </span>
+
+                            <span id="progressPercent">
+                                0%
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div id="progressFill" class="progress-fill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div id="checkerContent" class="checker-content">
+
+                        <!-- JavaScript will insert content here -->
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="checker-safety-note">
+
+                    <span class="safety-symbol">
+                        ⚠
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Important
+                        </strong>
+
+                        <p>
+                            SwasthPath provides general health guidance only. It does not diagnose medical conditions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MEDICINE GUIDANCE SECTION
+        ===================================================== -->
+
+        <section id="medicine-guidance" class="medicine-section">
+
+            <h2>
+                💊 Medicine Guidance
+            </h2>
+
+            <p>
+                Enter a medicine name to know its basic use.
+            </p>
+
+
+            <div class="medicine-box">
+
+                <input type="text" id="medicineInput" placeholder="Enter medicine name..." autocomplete="off">
+
+
+                <button id="medicineCheckBtn" type="button">
+
+                    Check Use
+
+                </button>
+
+            </div>
+
+
+            <div id="medicineResult">
+
+                <p style="color:#777;">
+                    Enter a medicine name above.
+                </p>
+
+            </div>
+
+
+            <p style="
+                max-width:550px;
+                margin:15px auto;
+                font-size:13px;
+                color:#777;
+            ">
+
+                ⚕️ General health information only. Medicine use should be confirmed with a doctor or pharmacist.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ABOUT SECTION
+        ===================================================== -->
+
+        <section id="aboutSection" class="about-section">
+
+
+            <div class="section-container">
+
+
+                <div class="section-heading">
+
+                    <span class="section-tag">
+                        ABOUT SWASTHPATH
+                    </span>
+
+                    <h2>
+                        Healthcare guidance made simpler.
+                    </h2>
+
+                    <p>
+                        SwasthPath is designed to help users understand the appropriate next step when they are unsure about a basic health concern.
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-grid">
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🧭
+                        </div>
+
+                        <h3>
+                            Clear Next Step
+                        </h3>
+
+                        <p>
+                            Get simple guidance about whether to monitor at home, visit a local healthcare centre, or seek urgent care.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🚨
+                        </div>
+
+                        <h3>
+                            Emergency Awareness
+                        </h3>
+
+                        <p>
+                            Potential danger signs are checked during the guidance flow and can trigger urgent escalation.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🌐
+                        </div>
+
+                        <h3>
+                            Local Language
+                        </h3>
+
+                        <p>
+                            The platform is designed for English, Hindi and Marathi users.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            📍
+                        </div>
+
+                        <h3>
+                            Nearby Healthcare
+                        </h3>
+
+                        <p>
+                            Users can search for nearby hospitals, clinics and healthcare facilities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HOW IT WORKS -->
+
+                <div class="how-it-works">
+
+
+                    <div class="section-heading small-heading">
+
+                        <span class="section-tag">
+                            HOW IT WORKS
+                        </span>
+
+                        <h2>
+                            From concern to next step
+                        </h2>
+
+                    </div>
+
+
+                    <div class="steps-container">
+
+
+                        <div class="step-card">
+
+                            <div class="step-number">
+                                01
+                            </div>
+
+                            <h3>
+                                Select Concern
+                            </h3>
+
+                            <p>
+                                Choose the health concern that best matches your situation.
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="step-card">
+
+                            <div class="step-number">
+                                02
+                            </div>
+
+                            <h3>
+                                Answer Questions
+                            </h3>
+
+                            <p>
+                                Answer short follow-up questions about your concern.
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="step-card">
+
+                            <div class="step-number">
+                                03
+                            </div>
+
+                            <h3>
+                                Safety Check
+                            </h3>
+
+                            <p>
+                                The system checks for potential danger signs.
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="step-card">
+
+                            <div class="step-number">
+                                04
+                            </div>
+
+                            <h3>
+                                Get Guidance
+                            </h3>
+
+                            <p>
+                                Receive a clear next-step suggestion with an explanation.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="medical-disclaimer">
+
+                    <div class="disclaimer-icon">
+                        ⚕
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Medical Disclaimer
+                        </h3>
+
+                        <p>
+                            SwasthPath is a hackathon prototype for general health guidance. It is not a medical diagnosis system and does not replace a qualified healthcare professional.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FOOTER
+        ===================================================== -->
+
+        <footer class="footer">
+
+            <div class="footer-container">
+
+
+                <div class="footer-brand">
+
+                    <div class="footer-logo">
+
+                        <span>♥</span> SwasthPath
+
+                    </div>
+
+                    <p>
+                        Rural Health Guidance Assistant
+                    </p>
+
+                </div>
+
+
+                <div class="footer-info">
+
+                    <p>
+                        Healthcare PS-03
+                    </p>
+
+                    <p>
+                        Hackathon Prototype
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 SwasthPath • General guidance only • Not a diagnosis
+                </p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script src="script.js"></script>
+
+    <!-- Medicine Guidance JavaScript -->
+    <script src="medicine.js"></script>
+
+
+    <!-- Connect Medicine Button -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const button =
+                document.getElementById("medicineCheckBtn");
+
+            if (button) {
+
+                button.addEventListener("click", function() {
+
+                    showMedicineUse();
+
+                });
+
+            }
+
+        });
+    </script>
+
+
+</body>
+
+</html>
+```
